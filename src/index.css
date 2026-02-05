@@ -1,0 +1,29 @@
+/* These Tailwind at-rules are processed by PostCSS during dev/build. */
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
+
+/* Warm app background */
+:root {
+  --warm-bg: #fff3e6;
+  --warm-surface: #ffe8d6;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--warm-bg);
+  color: #1f2937;
+}
+
+/* Make Bootstrap badges/buttons look crisp with Tailwind fonts */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

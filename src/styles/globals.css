@@ -1,0 +1,37 @@
+/* Shared app-level styles (kept small; mostly Tailwind + Bootstrap) */
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.hero-surface {
+  background: var(--warm-surface);
+}
+
+/* Navbar customizations */
+.brand-title {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 800;
+  font-size: 1.55rem;
+  letter-spacing: 0.2px;
+}
+
+/* On large screens, keep the nav links area on the right half */
+@media (min-width: 992px) {
+  .nav-right-half {
+    width: 50%;
+    justify-content: flex-end;
+  }
+}
+
+/* Ash hover background for nav links */
+.navbar .nav-link {
+  border-radius: 10px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.navbar .nav-link:hover {
+  background: #e5e7eb; /* ash */
+}
