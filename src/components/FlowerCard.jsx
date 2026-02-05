@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useCart } from '../state/useCart.js';
 
-const FALLBACK_IMG =
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Iconic_image_of_a_flower.svg/512px-Iconic_image_of_a_flower.svg.png';
+import fallbackImg from '../img/daisy.png';
+
+const FALLBACK_IMG = fallbackImg;
 
 export default function FlowerCard({ flower }) {
   const { addToCart, items } = useCart();

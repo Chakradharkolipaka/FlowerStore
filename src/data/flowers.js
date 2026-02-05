@@ -1,25 +1,25 @@
 // Images are stored locally under `src/img/` so they always load (even after refresh/deploy).
 
-import roseRed from '../img/rose-red.svg';
-import tulipPink from '../img/tulip-pink.svg';
-import lilyWhite from '../img/lily-white.svg';
-import orchidPhalaenopsis from '../img/orchid-phalaenopsis.svg';
-import sunflowerImg from '../img/sunflower.svg';
-import daisyImg from '../img/daisy.svg';
-import marigoldImg from '../img/marigold.svg';
-import jasmineImg from '../img/jasmine.svg';
-import lavenderImg from '../img/lavender.svg';
-import lotusImg from '../img/lotus.svg';
-import hibiscusImg from '../img/hibiscus.svg';
-import chrysanthemumImg from '../img/chrysanthemum.svg';
-import carnationImg from '../img/carnation.svg';
-import peonyImg from '../img/peony.svg';
-import gerberaImg from '../img/gerbera.svg';
-import irisImg from '../img/iris.svg';
-import daffodilImg from '../img/daffodil.svg';
-import gardeniaImg from '../img/gardenia.svg';
-import camelliaImg from '../img/camellia.svg';
-import hydrangeaImg from '../img/hydrangea.svg';
+import roseRed from '../img/rose-red.png';
+import tulipPink from '../img/tulip-pink.png';
+import lilyWhite from '../img/lily-white.png';
+import orchidPhalaenopsis from '../img/orchid-phalaenopsis.png';
+import sunflowerImg from '../img/sunflower.png';
+import daisyImg from '../img/daisy.png';
+import marigoldImg from '../img/marigold.png';
+import jasmineImg from '../img/jasmine.png';
+import lavenderImg from '../img/lavender.png';
+import lotusImg from '../img/lotus.png';
+import hibiscusImg from '../img/hibiscus.png';
+import chrysanthemumImg from '../img/chrysanthemum.png';
+import carnationImg from '../img/carnation.png';
+import peonyImg from '../img/peony.png';
+import gerberaImg from '../img/gerbera.png';
+import irisImg from '../img/iris.png';
+import daffodilImg from '../img/daffodil.png';
+import gardeniaImg from '../img/gardenia.png';
+import camelliaImg from '../img/camellia.png';
+import hydrangeaImg from '../img/hydrangea.png';
 export const flowers = [
   {
     id: 'rose-red',
