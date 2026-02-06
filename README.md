@@ -1,3 +1,12 @@
+Etherscan Url to verify contract :https://sepolia.etherscan.io/address/0xb7b43c3e5926ef2329f95dcc8dd5dcfe103007e4#writeContract
+
+
+Github Repository url: https://github.com/Chakradharkolipaka/FlowerStore
+
+
+Project (vercel deployed) Url : https://flowerstore-dapp-4dvcyoocp-chakradhar-kolipakas-projects.vercel.app/
+
+
 FlowerMart (Frontend) 
 
 A clean, interactive frontend-only shopping experience for flowers, built with React + Vite
