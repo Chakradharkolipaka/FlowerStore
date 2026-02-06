@@ -1,7 +1,82 @@
 # FlowerMart (Frontend)
 
 A clean, interactive **frontend-only** shopping experience for flowers, built with 
-**React + Vite** and styled using **Bootstrap + Tailwind CSS**.
+**React + Vite**
+## ☁️ Deploy
+
+### Vercel Deployment
+
+1. Push your code to GitHub
+2. Import repository in Vercel
+3. Configure:
+   - **Root Directory**: `FlowerStores`
+   - **Framework**: Vite
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+
+The included `vercel.json` handles client-side routing.
+
+### After Deployment
+
+1. Deploy the smart contract to Sepolia (see [`DEPLOYMENT_GUIDE.md`](../DEPLOYMENT_GUIDE.md))
+2. Update `src/contracts/config.js` with the contract address
+3. Rebuild and redeploy the frontend
+
+## 🧪 Testing
+
+### Test the Payment Flow
+
+1. Open app in browser with MetaMask installed
+2. Add flowers to cart
+3. Go to Checkout
+4. Click "Connect MetaMask"
+5. Switch to Sepolia network (MetaMask will prompt)
+6. Click "Pay X ETH"
+7. Confirm transaction in MetaMask
+8. View transaction on [Sepolia Etherscan](https://sepolia.etherscan.io)
+
+### Get Test ETH
+
+Free Sepolia ETH faucets:
+- https://sepoliafaucet.com/
+- https://www.alchemy.com/faucets/ethereum-sepolia
+- https://sepolia-faucet.pk910.de/
+
+## 📚 Documentation
+
+- **Frontend**: You're reading it!
+- **Smart Contracts**: [`../contracts/README.md`](../contracts/README.md)
+- **Deployment Guide**: [`../DEPLOYMENT_GUIDE.md`](../DEPLOYMENT_GUIDE.md)
+
+## 🛠️ Tech Stack
+
+### Frontend
+- React 18
+- Vite 7
+- React Router DOM
+- Bootstrap 5
+- Tailwind CSS 3
+- ethers.js 6
+
+### Smart Contracts
+- Solidity ^0.8.24
+- Foundry (Forge, Cast, Anvil)
+- Sepolia Testnet
+
+## 📝 Notes
+
+- This is a **testnet demo** using Sepolia (no real money)
+- NFT-like uniqueness: purchased flowers disappear after checkout
+- All payments go to owner wallet: `0x1BeB7894f17024A1D5f3D5aa079aCAE180e0fc4E`
+
+## 🔮 Future Enhancements
+
+- Persist cart/inventory in localStorage
+- Add search and filters
+- Transaction history page
+- Toast notifications
+- Multiple payment tokens support
+- Mainnet deployment (with real payments) **Bootstrap + Tailwind CSS**.
 
 ## 🎯 Objective
 
@@ -46,11 +121,14 @@ So the same flower can’t be bought again after payment in this session.
 	- Decrease qty (`−`)
 	- Remove item (deletes from UI + cart state)
 
-### 3) Shipping (`src/pages/Shipping.jsx`)
+### 3) Checkout (`src/pages/Shipping.jsx`)
 
-- Basic shipping form (frontend-only)
-- Order summary (right side)
-- Place Order:
+- **Connect MetaMask** wallet button
+- Automatically switches to Sepolia testnet
+- Shows payment details (total in ETH)
+- **Pay with MetaMask** button
+- Transaction confirmation with Etherscan link
+- After successful payment:
 	- Removes purchased items from **catalog** (Home inventory)
 	- Clears cart
 	- Redirects back to Home
@@ -61,23 +139,63 @@ So the same flower can’t be bought again after payment in this session.
 - Links: Home / Cart / Shipping
 - Cart badge shows **live quantity count**
 
-## 🗂️ Project structure (important folders)
+## 🗂️ Project structure
 
 ```text
 src/
-	app/                 # App shell + router bindings
-	components/          # Reusable UI building blocks
-	pages/               # Screen-level pages (Home/Cart/Shipping)
-	data/                # Catalog items (20 flowers)
-	state/               # Context providers + hooks
-	styles/              # Small global CSS
+	app/                 # App shell + router
+	components/          # Reusable UI components
+	pages/               # Home, Cart, Checkout pages
+	data/                # Flower catalog (20 items)
+	state/               # React Context (cart + catalog)
+	contracts/           # Web3 utilities + ABI
+	styles/              # Global CSS
 ```
 
-## 🚀 Run locally
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 18+
+- MetaMask browser extension
+- Sepolia testnet ETH (from faucet)
+
+### Run Locally
 
 ```bash
+cd FlowerStores
 npm install
 npm run dev
+```
+
+Open http://localhost:5173
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+## 🔐 Smart Contract Integration
+
+This app uses a Solidity smart contract deployed on Sepolia for payments.
+
+**Contract details:**
+- Location: `../contracts/src/FlowerPayment.sol`
+- Framework: Foundry
+- Tests: `../contracts/test/FlowerPayment.t.sol`
+
+See [`../contracts/README.md`](../contracts/README.md) for contract documentation and [`../DEPLOYMENT_GUIDE.md`](../DEPLOYMENT_GUIDE.md) for full deployment instructions.
+
+### Update Contract Address
+
+After deploying the contract, update `src/contracts/config.js`:
+
+```javascript
+export const CONFIG = {
+  CONTRACT_ADDRESS: '0xYourDeployedContractAddress',
+  // ... other config
+};
 ```
 
 ## ☁️ Deploy to Vercel
