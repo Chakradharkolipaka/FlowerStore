@@ -75,7 +75,10 @@ The Landing page inventory (Home)
 So the same flower can’t be bought again after payment in this session.
 
 
+
+
 FlowerStore (Smart Contracts)
+
 Solidity contracts for FlowerStore payments, built with Foundry.
 
 Stack used
