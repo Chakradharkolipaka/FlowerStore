@@ -1,4 +1,5 @@
-=> FlowerMart (Frontend) <=
+FlowerMart (Frontend) 
+
 A clean, interactive frontend-only shopping experience for flowers, built with React + Vite
 
 ☁️ Deploy
@@ -74,7 +75,7 @@ The Landing page inventory (Home)
 So the same flower can’t be bought again after payment in this session.
 
 
-=> FlowerStore (Smart Contracts) <=
+FlowerStore (Smart Contracts)
 Solidity contracts for FlowerStore payments, built with Foundry.
 
 Stack used
